@@ -2,7 +2,7 @@ name: DEPLOY TO STAGING
 
 on:
     pull_request:
-        types : [closed]
+        types: [closed]
         branches:
             - develop
 
@@ -19,10 +19,24 @@ jobs:
             - name: Deploy to Server
               uses: easingthemes/ssh-deploy@v2.1.1
               env:
-                    SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-                    ARGS: "-rltgoDzvO --delete"
-                    SOURCE: "dist/"
-                    REMOTE_HOST: "todo.eaglesoftwareteam.com"
-                    REMOTE_USER: ubuntu
-                    TARGET: "/nodeapps/todo-backend"
-© 2020 GitHub, Inc.
+                  SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+                  ARGS: '-rltgoDzvO --delete'
+                  SOURCE: 'dist/'
+                  REMOTE_HOST: 'todo.eaglesoftwareteam.com'
+                  REMOTE_USER: ubuntu
+                  TARGET: '/nodeapps/todo-backend'
+            - name: Execute SSH commmands on remote server
+              uses: JimCronqvist/action-ssh@master
+              env:
+                  NAME: 'Root'
+              with:
+                  hosts: 'user@todo.eaglesoftwareteam.com'
+                  privateKey: ${{ secrets.PRIVATE_KEY }}
+                  debug: false
+                  command: |
+                      cd /nodeapps/todo-backend
+                      npm install
+                      npm build
+                      systemctl stop todo-backend
+                      copy todo-backend.service /lib/systemd/system/todo-backend.service
+                      systemctl start todo-backend
