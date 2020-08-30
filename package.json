@@ -4,7 +4,8 @@
     "scripts": {
         "watch": "babel src --out-dir dist --copy-files --watch",
         "build": "babel src --out-dir dist --copy-files",
-        "start": "node dist/server.js"
+        "start": "node dist/server.js",
+        "bundle": "mkdir deploy && cp -r dist package.json package-lock.json config.js deploy"
     },
     "dependencies": {
         "mysql2": "^1.6.4",
@@ -20,3 +21,4 @@
         "@babel/plugin-proposal-object-rest-spread": "^7.2.0"
     }
 }
+© 2020 GitHub, Inc.
