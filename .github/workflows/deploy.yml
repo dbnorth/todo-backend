@@ -37,9 +37,7 @@ jobs:
                   command: |
                       cd /nodeapps/todo-backend
                       npm install
-                      npm build
-                      sed 's|password: "", //!!!CHANGE ME!!!|password: "occs2020",|' -i deploy/config.js
-                      sed 's|hostname: "localhost",|hostname: "demo-database.czjofbims6cw.us-west-2.rds.amazonaws.com",|' -i deploy/config.js
+                      npm build           
                       systemctl stop todo-backend
                       copy todo-backend.service /lib/systemd/system/todo-backend.service
                       systemctl start todo-backend
