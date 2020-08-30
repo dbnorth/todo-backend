@@ -31,7 +31,7 @@ jobs:
               env:
                   NAME: 'Root'
               with:
-                  hosts: 'user@todo.eaglesoftwareteam.com'
+                  hosts: 'ubuntu@todo.eaglesoftwareteam.com'
                   privateKey: ${{ secrets.PRIVATE_KEY }}
                   debug: false
                   command: |
