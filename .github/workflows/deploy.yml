@@ -35,9 +35,7 @@ jobs:
                   privateKey: ${{ secrets.PRIVATE_KEY }}
                   debug: false
                   command: |
-                      cd /nodeapps/todo-backend
-                      npm install
-                      npm build           
+                      cd nodeapps/todo-backend          
                       systemctl stop todo-backend
                       copy todo-backend.service /lib/systemd/system/todo-backend.service
                       systemctl start todo-backend
