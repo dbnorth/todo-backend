@@ -2,7 +2,7 @@
 
 This project is the example backend for the Todo App, implemented with Express.
 
-It also contains files for Deployment to AWS
+It also contains files for Deployment to AWS.
 
 #### Prerequisites
 
