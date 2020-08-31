@@ -32,7 +32,7 @@ jobs:
                   NAME: 'Root'
               with:
                   hosts: 'ubuntu@todo.eaglesoftwareteam.com'
-                  privateKey: ${{ secrets.PRIVATE_KEY }}
+                  privateKey: ${{ secrets.SERVER_SSH_KEY }}
                   debug: false
                   command: |
                       systemctl stop todo-backend
