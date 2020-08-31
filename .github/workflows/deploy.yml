@@ -25,7 +25,7 @@ jobs:
                   SOURCE: 'deploy/'
                   REMOTE_HOST: 'todo.eaglesoftwareteam.com'
                   REMOTE_USER: ubuntu
-                  TARGET: '/nodeapps/todo-backend'
+                  TARGET: 'nodeapps/todo-backend'
             - name: Execute SSH commmands on remote server
               uses: JimCronqvist/action-ssh@master
               env:
