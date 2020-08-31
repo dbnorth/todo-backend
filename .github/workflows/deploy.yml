@@ -35,6 +35,6 @@ jobs:
                   privateKey: ${{ secrets.SERVER_SSH_KEY }}
                   debug: false
                   command: |
-                      systemctl stop todo-backend
-                      cp /home/ubuntu/todo-backend/todo-backend.service /lib/systemd/system/todo-backend.service
-                      systemctl start todo-backend
+                      sudo systemctl stop todo-backend
+                      sudo cp /home/ubuntu/nodeapps/todo-backend/todo-backend.service /lib/systemd/system/todo-backend.service
+                      sudo systemctl start todo-backend
