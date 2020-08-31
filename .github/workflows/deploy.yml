@@ -35,6 +35,8 @@ jobs:
                   privateKey: ${{ secrets.SERVER_SSH_KEY }}
                   debug: false
                   command: |
+                      cd nodeapps/todo-backend
+                      npm install
                       sudo systemctl stop todo-backend
                       sudo cp /home/ubuntu/nodeapps/todo-backend/todo-backend.service /lib/systemd/system/todo-backend.service
                       sudo systemctl start todo-backend
