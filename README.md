@@ -2,13 +2,16 @@
 
 This project is the example backend for the Todo App, implemented with Express.
 
+It also contains files for Deploy to AWS
+
 #### Prerequisites
+
 ##### Node v10
 
-* Windows: 
+-   Windows:
     https://nodejs.org/en/download/
 
-* Ubuntu:
+-   Ubuntu:
     ```bash
     curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     sudo apt install -y nodejs
