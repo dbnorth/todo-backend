@@ -39,4 +39,5 @@ jobs:
                       npm install
                       sudo systemctl stop todo-backend
                       sudo cp /home/ubuntu/nodeapps/todo-backend/todo-backend.service /lib/systemd/system/todo-backend.service
+                      sudo systemctl daemon-reload
                       sudo systemctl start todo-backend
