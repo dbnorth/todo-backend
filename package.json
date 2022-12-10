@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "mysql2": "^1.6.4",
-        "express": "^4.16.4",
+        "express": "^4.17.3",
         "@babel/runtime": "^7.2.0",
         "cors": "^2.8.5"
     },
